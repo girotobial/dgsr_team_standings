@@ -31,27 +31,28 @@
 
 <main>
     <h1><strong style="color: red">DGSR</strong> Season 9 Team Positions</h1>
-
-    <table class="table table-dark table-responsive table-striped table-hover">
-        <thead>
-            <th scope="col">Position</th>
-            <th scope="col">Points</th>
-            <th scope="col">Team</th>
-            <th scope="col">Car</th>
-            <th scope="col">Drivers</th>
-        </thead>
-        <tbody class="table-group-divider">
-            {#each teams as team, i (team.name)}
-                <tr animate:flip>
-                    <th scope="row">{i + 1}</th>
-                    <td>{team.points}</td>
-                    <td>{team.name}</td>
-                    <td>{team.carModel}</td>
-                    <td><DriverTable drivers={team.drivers} /></td>
-                </tr>
-            {/each}
-        </tbody><tbody />
-    </table>
+    <div class="center table-responsive">
+        <table class="table table-dark table-striped table-hover table-sm">
+            <thead>
+                <th scope="col">Position</th>
+                <th scope="col">Points</th>
+                <th scope="col">Team</th>
+                <th scope="col">Car</th>
+                <th scope="col">Drivers</th>
+            </thead>
+            <tbody class="table-group-divider">
+                {#each teams as team, i (team.name)}
+                    <tr animate:flip>
+                        <th scope="row">{i + 1}</th>
+                        <td>{team.points}</td>
+                        <td>{team.name}</td>
+                        <td>{team.carModel}</td>
+                        <td><DriverTable drivers={team.drivers} /></td>
+                    </tr>
+                {/each}
+            </tbody><tbody />
+        </table>
+    </div>
 </main>
 
 <style>
@@ -63,7 +64,13 @@
     h1 {
         color: white;
     }
-    table {
-        margin: 10px;
+    .table {
+        max-width: 80%;
+    }
+    .center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 3px solid green;
     }
 </style>

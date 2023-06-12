@@ -5,7 +5,7 @@
     export let drivers: Array<Driver>;
 </script>
 
-<table class="table table-dark table-responsive">
+<table class="table table-sm table-dark table-responsive">
     <thead>
         <th scope="column">Position</th>
         <th scope="column">Driver</th>

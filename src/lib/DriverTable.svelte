@@ -9,16 +9,20 @@
     <thead>
         <th scope="column">Position</th>
         <th scope="column">Driver</th>
-        <th scope="columm">Points</th>
+        <th scope="columm">Race Points</th>
         <th scope="column">Fastest Lap</th>
+        <th scope="columm">Season Points</th>
     </thead>
     <tbody>
         {#each drivers as driver (driver.driverNumber)}
             <tr animate:flip>
-                <th scope="row">{driver.position}</th>
-                <td>{driver.carNumber} {driver.name}</td>
-                <td>{driver.points}</td>
-                <td>{driver.fastestLapString()}</td>
+                {#if driver.position !== 999}
+                    <th scope="row">{driver.position}</th>
+                    <td>{driver.carNumber} {driver.name}</td>
+                    <td>{driver.points}</td>
+                    <td>{driver.fastestLapString()}</td>
+                    <td>{driver.seasonPoints}</td>
+                {/if}
             </tr>
         {/each}
     </tbody>
